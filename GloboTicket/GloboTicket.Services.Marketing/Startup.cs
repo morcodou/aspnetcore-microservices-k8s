@@ -56,11 +56,6 @@ namespace GloboTicket.Services.Marketing
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-                {
-                    var context = serviceScope.ServiceProvider.GetRequiredService<MarketingDbContext>();
-                    context.Database.Migrate();
-                }
             }
 
             app.UseHttpsRedirection();

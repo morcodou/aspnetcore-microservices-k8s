@@ -45,12 +45,14 @@ namespace GloboTicket.Services.Discount
                 using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
                 {
                     var context = serviceScope.ServiceProvider.GetRequiredService<DiscountDbContext>();
-                    context.Database.EnsureDeleted(); // clean all coupons and then recreate db
                     context.Database.Migrate();
                 }
             }
 
-            app.UseHttpsRedirection();
+            if (Configuration["DOTNET_RUNNING_IN_CONTAINER"] != "true")
+            {
+                app.UseHttpsRedirection();
+            }
 
             app.UseSwagger();
 
