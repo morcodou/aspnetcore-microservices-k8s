@@ -1,0 +1,2 @@
+kubectl create secret generic eventcatalog-db --from-literal=connectionstring="Data Source=tcp:svc-globoticketdb,1434;Initial Catalog=GloboTicketEventCatalogDb;Integrated Security=False;User ID=sa;Password=P(ssw0rd0123);Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;"
+kubectl apply -f .\eventcalatog\eventcalatog.yaml
