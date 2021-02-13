@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-globoticket-services-eventcatalog
+  name: svc-globoticket-services-discount
   labels:
     version: dev
-    product: globoticket-services-eventcatalog
+    product: globoticket-services-discount
 spec:
   selector:
-    app: globoticket-services-eventcatalog
+    app: globoticket-services-discount
   ports:
     - port: 80
       targetPort: 80
@@ -21,20 +21,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dep-globoticket-services-eventcatalog 
+  name: dep-globoticket-services-discount 
 spec:
   selector:
     matchLabels:
-      app: globoticket-services-eventcatalog
+      app: globoticket-services-discount
   replicas: 1
   template:
     metadata:
       labels:
-        app: globoticket-services-eventcatalog
+        app: globoticket-services-discount
     spec:
       containers:
-      - name: globoticket-services-eventcatalog
-        image: morcodou/globoticket.services.eventcatalog:latest        
+      - name: globoticket-services-discount
+        image: morcodou/globoticket.services.discount:latest        
         env:
           - name: ASPNETCORE_ENVIRONMENT
             value: Production
@@ -43,7 +43,7 @@ spec:
           - name: ConnectionStrings__DefaultConnection
             valueFrom:
               secretKeyRef:
-               name: eventcatalog-db
+               name: discount-db
                key: connectionstring      
         resources:
           limits:
