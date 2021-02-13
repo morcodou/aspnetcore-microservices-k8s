@@ -65,6 +65,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{56F5AA78-E54
 		sql\wait-for-it.sh = sql\wait-for-it.sh
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{E74BB356-9941-4FF4-BCC0-E5BB5C4BC237}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eventcatalog", "eventcatalog", "{5892554A-351C-4188-BCCF-5F2383718E93}"
+	ProjectSection(SolutionItems) = preProject
+		k8s\eventcalatog\eventcalatog.yaml = k8s\eventcalatog\eventcalatog.yaml
+		k8s\eventcalatog\globois4.configmap.yml = k8s\eventcalatog\globois4.configmap.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{FA76D43A-D49B-4FD6-AB87-46274E8BD59F}"
+	ProjectSection(SolutionItems) = preProject
+		k8s\sql\globoticketsql.yml = k8s\sql\globoticketsql.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{B53F2FE4-C4E2-4FFE-8C8B-DD5BCDB6D4AF}"
+	ProjectSection(SolutionItems) = preProject
+		k8s\discount\depoy.ps1 = k8s\discount\depoy.ps1
+		k8s\discount\discount.yaml = k8s\discount\discount.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -318,6 +337,9 @@ Global
 		{072B9D2E-5F8A-4B13-B9CF-E7C6911D9268} = {CD6C2FD3-1D6A-46EC-8E23-827CA3EC4AFE}
 		{ACEA45CB-0CF4-4093-A6AF-E4984FCA6F5D} = {CD6C2FD3-1D6A-46EC-8E23-827CA3EC4AFE}
 		{E755D37E-675F-4155-A279-F4FD88CFE892} = {825D4E4F-3BFF-4546-96AB-8AB83D95722D}
+		{5892554A-351C-4188-BCCF-5F2383718E93} = {E74BB356-9941-4FF4-BCC0-E5BB5C4BC237}
+		{FA76D43A-D49B-4FD6-AB87-46274E8BD59F} = {E74BB356-9941-4FF4-BCC0-E5BB5C4BC237}
+		{B53F2FE4-C4E2-4FFE-8C8B-DD5BCDB6D4AF} = {E74BB356-9941-4FF4-BCC0-E5BB5C4BC237}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57E1B7AE-99E6-4F8F-977C-CF0FD36BBE42}
