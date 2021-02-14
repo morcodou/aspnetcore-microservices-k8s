@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-globoticket-external-paymentgateway
+  labels:
+    version: dev
+    product: globoticket-external-paymentgateway
+spec:
+  selector:
+    app: globoticket-external-paymentgateway
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP 
+      name: http   
+    - port: 443
+      targetPort: 443
+      protocol: TCP 
+      name: https  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-globoticket-external-paymentgateway 
+spec:
+  selector:
+    matchLabels:
+      app: globoticket-external-paymentgateway
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: globoticket-external-paymentgateway
+    spec:
+      containers:
+      - name: globoticket-external-paymentgateway
+        image: morcodou/globoticket.external.paymentgateway:latest        
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: Production
+          - name: ASPNETCORE_URLS
+            value: http://+:80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+
