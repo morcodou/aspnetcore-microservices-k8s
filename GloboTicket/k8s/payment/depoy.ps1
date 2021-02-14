@@ -1,0 +1,1 @@
+kubectl apply -f .\payment\payment.yaml
