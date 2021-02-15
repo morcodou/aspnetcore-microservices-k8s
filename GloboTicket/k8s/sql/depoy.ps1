@@ -1,1 +1,1 @@
-kubectl apply -f .\eventcalatog\globoticketsql.yaml
+kubectl apply -f .\sql\globoticketsql.yaml

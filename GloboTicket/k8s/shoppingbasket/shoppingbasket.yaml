@@ -49,10 +49,6 @@ spec:
               secretKeyRef:
                name: shoppingbasket-db
                key: connectionstring      
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "200m"
         ports:
         - containerPort: 80
         - containerPort: 443

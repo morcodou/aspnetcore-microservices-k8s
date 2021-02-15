@@ -16,10 +16,6 @@ spec:
       containers:
       - name: globoticketdb
         image: morcodou/globoticket_database:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "200m"
         ports:
         - containerPort: 1433 
 ---               

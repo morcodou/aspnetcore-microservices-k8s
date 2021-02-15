@@ -50,10 +50,6 @@ spec:
             value: orderpaymentupdatedmessage
           - name: ApiConfigs__ExternalPaymentGateway__Uri
             value: http://svc-globoticket-external-paymentgateway
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "200m"
         ports:
         - containerPort: 80
         - containerPort: 443
