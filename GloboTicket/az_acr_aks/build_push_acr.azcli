@@ -19,3 +19,6 @@ docker-compose -f .\docker-compose.yml -f .\docker-compose-build.override.yml pu
 # k exec -it dep-globoticket-services-eventcatalog-7bdd499894-r9m8v -- bash
 docker tag morcodou/globoticket_database azmcggloboticketacr.azurecr.io/globoticket.database:1
 docker push azmcggloboticketacr.azurecr.io/globoticket.database:1
+
+docker-compose -f .\docker-compose.yml -f .\docker-compose-build.override.yml build globoticket.web
+docker push azmcggloboticketacr.azurecr.io/globoticket.web:2
