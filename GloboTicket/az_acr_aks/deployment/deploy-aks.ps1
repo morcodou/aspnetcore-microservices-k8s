@@ -9,3 +9,5 @@
 # kubectl apply -f .\deployment\gatewaywebbff.yaml
 # kubectl apply -f .\deployment\web.yaml
 # kubectl apply -f .\deployment\webbff.yaml
+
+# kubectl scale --replicas=3 deployment.apps/dep-globoticket-web

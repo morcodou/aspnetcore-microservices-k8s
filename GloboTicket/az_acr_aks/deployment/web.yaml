@@ -27,7 +27,13 @@ spec:
   selector:
     matchLabels:
       app: globoticket-web
-  replicas: 1
+  replicas: 5
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
@@ -51,6 +57,18 @@ spec:
             value: http://svc-globoticket-services-marketing
           - name: ApiConfigs__Discount__Uri
             value: http://svc-globoticket-services-discount
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 3
         ports:
         - containerPort: 80
         - containerPort: 443

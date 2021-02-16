@@ -87,6 +87,27 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Services.PaymentWorker", "GloboTicket.Services.PaymentWorker\GloboTicket.Services.PaymentWorker.csproj", "{6D6AEC39-A608-4FD1-87B1-6D63E491293F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "az_acr_aks", "az_acr_aks", "{1F8A1261-600D-4F47-8C70-75879E05289B}"
+	ProjectSection(SolutionItems) = preProject
+		az_acr_aks\build_push_acr.azcli = az_acr_aks\build_push_acr.azcli
+		az_acr_aks\create_secrets.ps1 = az_acr_aks\create_secrets.ps1
+		az_acr_aks\setup_aks.azcli = az_acr_aks\setup_aks.azcli
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployment", "deployment", "{CB41F42D-06D8-48D1-B292-2ED08797D9C6}"
+	ProjectSection(SolutionItems) = preProject
+		az_acr_aks\deployment\deploy-aks.ps1 = az_acr_aks\deployment\deploy-aks.ps1
+		az_acr_aks\deployment\discount.yaml = az_acr_aks\deployment\discount.yaml
+		az_acr_aks\deployment\eventcalatog.yaml = az_acr_aks\deployment\eventcalatog.yaml
+		az_acr_aks\deployment\gatewaywebbff.yaml = az_acr_aks\deployment\gatewaywebbff.yaml
+		az_acr_aks\deployment\globoticketsql.yaml = az_acr_aks\deployment\globoticketsql.yaml
+		az_acr_aks\deployment\marketing.yaml = az_acr_aks\deployment\marketing.yaml
+		az_acr_aks\deployment\ordering.yaml = az_acr_aks\deployment\ordering.yaml
+		az_acr_aks\deployment\payment.yaml = az_acr_aks\deployment\payment.yaml
+		az_acr_aks\deployment\paymentgateway.yaml = az_acr_aks\deployment\paymentgateway.yaml
+		az_acr_aks\deployment\shoppingbasket.yaml = az_acr_aks\deployment\shoppingbasket.yaml
+		az_acr_aks\deployment\web.yaml = az_acr_aks\deployment\web.yaml
+		az_acr_aks\deployment\webbff.yaml = az_acr_aks\deployment\webbff.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -357,6 +378,7 @@ Global
 		{FA76D43A-D49B-4FD6-AB87-46274E8BD59F} = {E74BB356-9941-4FF4-BCC0-E5BB5C4BC237}
 		{B53F2FE4-C4E2-4FFE-8C8B-DD5BCDB6D4AF} = {E74BB356-9941-4FF4-BCC0-E5BB5C4BC237}
 		{6D6AEC39-A608-4FD1-87B1-6D63E491293F} = {F3632F51-056C-43C5-9E59-8D371E99C8BF}
+		{CB41F42D-06D8-48D1-B292-2ED08797D9C6} = {1F8A1261-600D-4F47-8C70-75879E05289B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57E1B7AE-99E6-4F8F-977C-CF0FD36BBE42}
