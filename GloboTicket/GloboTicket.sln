@@ -86,6 +86,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{B5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Services.PaymentWorker", "GloboTicket.Services.PaymentWorker\GloboTicket.Services.PaymentWorker.csproj", "{6D6AEC39-A608-4FD1-87B1-6D63E491293F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "az_acr_aks", "az_acr_aks", "{1F8A1261-600D-4F47-8C70-75879E05289B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

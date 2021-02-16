@@ -1,0 +1,21 @@
+# DOCKER COMPOSE
+docker-compose -f .\docker-compose.yml -f .\docker-compose-build.override.yml build
+
+az acr login --name azmcggloboticketacr
+
+docker-compose -f .\docker-compose.yml -f .\docker-compose-build.override.yml push
+
+# azmcggloboticketacr.azurecr.io/globoticket.web.bff:1
+# azmcggloboticketacr.azurecr.io/globoticket.web:1
+# azmcggloboticketacr.azurecr.io/globoticket.services.discount:1
+# azmcggloboticketacr.azurecr.io/globoticket.gateway.mobilebff:1
+# azmcggloboticketacr.azurecr.io/external.paymentgateway:1
+# azmcggloboticketacr.azurecr.io/globoticket.services.ordering:1
+# azmcggloboticketacr.azurecr.io/globoticket.services.marketing:1
+# azmcggloboticketacr.azurecr.io/globoticket.services.payment:1
+# azmcggloboticketacr.azurecr.io/globoticket.services.shoppingbasket:1
+# azmcggloboticketacr.azurecr.io/globoticket.services.eventcatalog:1
+# azmcggloboticketacr.azurecr.io/globoticket.gateway.webbff:1
+# k exec -it dep-globoticket-services-eventcatalog-7bdd499894-r9m8v -- bash
+docker tag morcodou/globoticket_database azmcggloboticketacr.azurecr.io/globoticket.database:1
+docker push azmcggloboticketacr.azurecr.io/globoticket.database:1

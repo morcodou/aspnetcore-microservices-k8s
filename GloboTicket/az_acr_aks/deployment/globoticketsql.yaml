@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: globoticketdb
+spec:
+  selector:
+    matchLabels:
+      app: globoticketdb
+  replicas: 1  
+  template:
+    metadata:
+      labels:
+        app: globoticketdb
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: globoticketdb
+        image: azmcggloboticketacr.azurecr.io/globoticket.database:1
+        ports:
+        - containerPort: 1433 
+      imagePullSecrets:
+        - name: acr-secret
+
+---               
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-globoticketdb
+spec:
+  selector:
+    app: globoticketdb
+  ports:
+    - protocol: TCP
+      port: 1434
+      targetPort: 1433

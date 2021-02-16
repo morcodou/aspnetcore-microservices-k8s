@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-globoticket-gateway-webbff
+  labels:
+    version: dev
+    product: globoticket-gateway-webbff
+spec:
+  selector:
+    app: globoticket-gateway-webbff
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP 
+      name: http   
+    - port: 443
+      targetPort: 443
+      protocol: TCP 
+      name: https  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-globoticket-gateway-webbff 
+spec:
+  selector:
+    matchLabels:
+      app: globoticket-gateway-webbff
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: globoticket-gateway-webbff
+    spec:
+      containers:
+      - name: globoticket-gateway-webbff
+        image: azmcggloboticketacr.azurecr.io/globoticket.gateway.webbff:1        
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: Production
+          - name: ASPNETCORE_URLS
+            value: http://+:80
+          - name: ServiceUrls__EventCatalog
+            value: http://svc-globoticket-services-eventcatalog
+          - name: ServiceUrls__ShoppingBasket
+            value: http://svc-globoticket-services-shoppingbasket
+          - name: ServiceUrls__Ordering
+            value: http://svc-globoticket-services-order
+          - name: ServiceUrls__Marketing
+            value: http://svc-globoticket-services-marketing
+          - name: ServiceUrls__Discount
+            value: http://svc-globoticket-services-discount
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+      imagePullSecrets:
+        - name: acr-secret

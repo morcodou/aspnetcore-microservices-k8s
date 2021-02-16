@@ -1,0 +1,27 @@
+# AKS
+az group create  --name az-mcg-globoticket-rg  --location canadacentral
+
+az aks create --resource-group az-mcg-globoticket-rg --name az-mcg-globoticket-aks-cluster --node-count 1 --enable-addons monitoring --generate-ssh-keys --kubernetes-version 1.20.2
+
+az aks install-cli
+
+az aks get-credentials --resource-group az-mcg-globoticket-rg --name az-mcg-globoticket-aks-cluster
+
+kubectl get nodes
+
+# ACR
+az acr create --resource-group az-mcg-globoticket-rg --name azmcggloboticketacr --sku Basic
+# azmcggloboticketacr.azurecr.io
+
+
+# SSH key files 'C:\Users\morcodou\.ssh\id_rsa' and 'C:\Users\morcodou\.ssh\id_rsa.pub' 
+# have been generated under ~/.ssh to allow SSH access to the VM. If using machines 
+# without permanent storage like Azure Cloud Shell without an attached file share, 
+# back up your keys to a safe location
+
+# Downloading client to "C:\Users\morcodou\.azure-kubectl\kubectl.exe" from "https://storage.googleapis.com/kubernetes-release/release/v1.20.2/bin/windows/amd64/kubectl.exe"
+# Please add "C:\Users\morcodou\.azure-kubectl" to your search PATH so the `kubectl.exe` can be found. 2 options:
+#     1. Run "set PATH=%PATH%;C:\Users\morcodou\.azure-kubectl" or 
+# "$env:path += 'C:\Users\morcodou\.azure-kubectl'" for PowerShell. 
+# This is good for the current command session.
+#     2. Update system PATH environment variable by following "Control Panel->System->Advanced->Environment Variables", and re-open the command window. You only need to do it once
