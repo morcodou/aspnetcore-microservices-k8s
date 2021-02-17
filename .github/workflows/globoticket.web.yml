@@ -2,13 +2,13 @@ name: globoticket.web
 
 on:
   push:
-    branches: [ github_wokflows_aks ]
+    branches: [ github_workflows_aks ]
     paths:
     - '.github/workflows/globoticket.web.yml'
     - 'GloboTicket/GloboTicket.Client/**'
     - 'GloboTicket/aks-globoticket.web.yaml'
   pull_request:
-    branches: [ github_wokflows_aks ]
+    branches: [ github_workflows_aks ]
     paths:
     - '.github/workflows/globoticket.web.yml'
     - 'GloboTicket/GloboTicket.Client/**'
