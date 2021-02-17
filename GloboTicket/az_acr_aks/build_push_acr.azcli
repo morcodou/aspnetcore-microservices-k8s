@@ -22,3 +22,5 @@ docker push azmcggloboticketacr.azurecr.io/globoticket.database:1
 
 docker-compose -f .\docker-compose.yml -f .\docker-compose-build.override.yml build globoticket.web
 docker push azmcggloboticketacr.azurecr.io/globoticket.web:2
+
+az aks get-credentials --resource-group az-mcg-globoticket-rg --name az-mcg-globoticket-aks-cluster
