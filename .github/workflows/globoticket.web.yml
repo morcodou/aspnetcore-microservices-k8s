@@ -4,13 +4,13 @@ on:
   push:
     branches: [ github_wokflows_aks ]
     paths:
-    - '.github/workflows/globoticket.web.yaml'
+    - '.github/workflows/globoticket.web.yml'
     - 'GloboTicket/GloboTicket.Client/**'
     - 'GloboTicket/aks-globoticket.web.yaml'
   pull_request:
     branches: [ github_wokflows_aks ]
     paths:
-    - '.github/workflows/globoticket.web.yaml'
+    - '.github/workflows/globoticket.web.yml'
     - 'GloboTicket/GloboTicket.Client/**'
     - 'GloboTicket/aks-globoticket.web.yaml'
 
