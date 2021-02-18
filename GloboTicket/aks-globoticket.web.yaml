@@ -27,8 +27,8 @@ spec:
   selector:
     matchLabels:
       app: globoticket-web
-  replicas: 5
-  minReadySeconds: 5
+  replicas: 2
+  minReadySeconds: 15
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -61,14 +61,14 @@ spec:
           httpGet:
             path: /health
             port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 3
+          initialDelaySeconds: 15
+          periodSeconds: 15
         readinessProbe:
           httpGet:
             path: /health
             port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 3
+          initialDelaySeconds: 15
+          periodSeconds: 15
         ports:
         - containerPort: 80
         - containerPort: 443
